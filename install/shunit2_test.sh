@@ -11,7 +11,7 @@ oneTimeTearDown(){
     echo "testsFailed: ${__shunit_testsFailed}"
     echo "assertsTotal: ${__shunit_assertsTotal}"
     echo "assertsPassed: ${__shunit_assertsPassed}"
-    echo "shunit_assertsFailed: ${__shunit_assertsFailed}"
+    echo "assertsFailed: ${__shunit_assertsFailed}"
     echo "assertsSkipped: ${__shunit_assertsSkipped}" 
 }
 
