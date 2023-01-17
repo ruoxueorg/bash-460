@@ -32,4 +32,5 @@ testHelloWorld(){
 }
 
 
+# Load shunit2
 . shunit2
