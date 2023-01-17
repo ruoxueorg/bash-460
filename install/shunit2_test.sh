@@ -23,4 +23,13 @@ tearDown(){
     echo "tearDown"
 }
 
+helloWorld(){
+    echo "Hello World"
+}
+
+testHelloWorld(){
+    assertEquals "Return" "$(helloWorld)"  "Hello World"
+}
+
+
 . shunit2
