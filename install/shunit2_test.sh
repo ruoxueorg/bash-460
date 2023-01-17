@@ -6,13 +6,13 @@ oneTimeSetUp(){
 
 oneTimeTearDown(){
     echo "oneTimeTearDown"
-    echo "${__shunit_testsTotal}"
-    echo "${__shunit_testsPassed}"
-    echo "${__shunit_testsFailed}"
-    echo "${__shunit_assertsTotal}"
-    echo "${__shunit_assertsPassed}"
-    echo "${__shunit_assertsFailed}"
-    echo "${__shunit_assertsSkipped}" 
+    echo "testsTotal: ${__shunit_testsTotal}"
+    echo "testsPassed: ${__shunit_testsPassed}"
+    echo "testsFailed: ${__shunit_testsFailed}"
+    echo "assertsTotal: ${__shunit_assertsTotal}"
+    echo "assertsPassed: ${__shunit_assertsPassed}"
+    echo "shunit_assertsFailed: ${__shunit_assertsFailed}"
+    echo "assertsSkipped: ${__shunit_assertsSkipped}" 
 }
 
 setUp(){
@@ -28,7 +28,7 @@ helloWorld(){
 }
 
 testHelloWorld(){
-    assertEquals "Return" "$(helloWorld)"  "Hello World"
+    assertEquals "Equals" "$(helloWorld)"  "Hello World"
 }
 
 
