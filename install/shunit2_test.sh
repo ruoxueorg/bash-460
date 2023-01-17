@@ -28,7 +28,7 @@ helloWorld(){
 }
 
 testHelloWorld(){
-    assertEquals "Equals" "$(helloWorld)"  "Hello World"
+    assertEquals "string" "$(helloWorld)"  "Hello World"
 }
 
 
