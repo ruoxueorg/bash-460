@@ -10,8 +10,8 @@ testAdd() {
 
 testAddByIndex() {
     expectedLength=4
-    array=("Grape" "Kiwifruit" "Lemon")
-    #array+=("Grape")
+    declare -A array
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     array[3]="Grape"
     echo ${array[@]}
     assertEquals "length" $expectedLength ${#array[@]}
@@ -19,14 +19,16 @@ testAddByIndex() {
 
 testGet() {
     expected="Kiwifruit"
-    array=("Grape" "Kiwifruit" "Lemon")
+    declare -A array
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     echo ${array[1]}
     assertEquals "get" $expected ${array[1]}
 }
 
 testDelete() {
     expectedLength=2
-    array=("Grape" "Kiwifruit" "Lemon")
+    declare -A array
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     unset array[0]
     echo ${array[@]}
     assertEquals "length" $expectedLength ${#array[@]}
@@ -34,13 +36,15 @@ testDelete() {
 
 testLength() {
     expectedLength=3
-    array=("Grape" "Kiwifruit" "Lemon")
+    declare -A array
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     echo ${#array[@]}
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
 testLoop() {
-    array=("Grape" "Kiwifruit" "Lemon")
+    declare -A array
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     for i in "${array[@]}"
     do
         echo $i
@@ -49,7 +53,8 @@ testLoop() {
 
 testSet() {
     expected="Grape"
-    array=("Grape" "Kiwifruit" "Lemon")
+    declare -A array
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     echo ${array[@]}
     array[0]="Grape"
     echo ${array[@]}
