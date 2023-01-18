@@ -1,19 +1,19 @@
 #!/bin/bash
 
 testAdd() {
-    expectedSize=3
+    expectedLength=3
     array=("Apple" "Banana" "Cherry")
     echo ${array[@]}
-    assertEquals "length" $expectedSize ${#array[@]}
+    assertEquals "length" $expectedLength ${#array[@]}
 }
 
 testAddByIndex() {
-    expectedSize=4
+    expectedLength=4
     array=("Apple" "Banana" "Cherry")
     #array+=("Grape")
     array[3]="Grape"
     echo ${array[@]}
-    assertEquals "length" $expectedSize ${#array[@]}
+    assertEquals "length" $expectedLength ${#array[@]}
 }
 
 testGet() {
@@ -24,18 +24,18 @@ testGet() {
 }
 
 testDelete() {
-    expectedSize=2
+    expectedLength=2
     array=("Apple" "Banana" "Cherry")
     unset array[0]
     echo ${array[@]}
-    assertEquals "length" $expectedSize ${#array[@]}
+    assertEquals "length" $expectedLength ${#array[@]}
 }
 
 testLength() {
-    expectedSize=3
+    expectedLength=3
     array=("Apple" "Banana" "Cherry")
     echo ${#array[@]}
-    assertEquals "length" $expectedSize ${#array[@]}
+    assertEquals "length" $expectedLength ${#array[@]}
 }
 
 testLoop() {
