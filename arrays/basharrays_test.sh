@@ -19,7 +19,7 @@ testAddByIndex() {
 testGet() {
     expected="Banana"
     array=("Apple" "Banana" "Cherry")
-    echo ${array[@]}
+    echo ${array[1]}
     assertEquals "get" $expected ${array[1]}
 }
 
