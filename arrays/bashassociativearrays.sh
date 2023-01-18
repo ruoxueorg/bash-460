@@ -3,7 +3,7 @@
 testAdd() {
     expectedLength=3
     declare -A array
-    array=([Grape]=1 [Kiwifruit=2 [Lemon=3)
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     echo ${array[@]}
     assertEquals "length" $expectedLength ${#array[@]}
 }
