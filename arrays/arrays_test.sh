@@ -31,6 +31,14 @@ testDelete() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
+testDeleteAll() {
+    expectedLength=0
+    array=("Apple" "Banana" "Cherry")
+    unset array
+    echo ${!array[@]}
+    assertEquals "length" $expectedLength ${#array[@]}
+}
+
 testLength() {
     expectedLength=3
     array=("Apple" "Banana" "Cherry")
@@ -53,6 +61,16 @@ testSet() {
     array[0]="Grape"
     echo ${array[@]}
     assertEquals "get" $expected ${array[0]}
+}
+
+testSlice () {
+    expectedLength=2
+    array=("Apple" "Banana" "Cherry")
+    echo ${!array[@]}
+    echo ${array[@]}
+    slice_array=("${array[@]:1:2}")
+    echo ${slice_array[@]}
+    assertEquals "length" $expectedLength ${#slice_array[@]}
 }
 
 

@@ -37,6 +37,15 @@ testDelete() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
+testDeleteAll() {
+    expectedLength=0
+    declare -A array
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
+    unset array
+    echo ${!array[@]}
+    assertEquals "length" $expectedLength ${#array[@]}
+}
+
 testLength() {
     expectedLength=3
     declare -A array
@@ -66,6 +75,16 @@ testSet() {
     assertEquals "get" $expected ${array[Grape]}
 }
 
+testSlice () {
+    expectedLength=2
+    declare -A array
+    array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
+    echo ${!array[@]}
+    echo ${array[@]}
+    slice_array=("${array[@]:1:2}")
+    echo ${slice_array[@]}
+    assertEquals "length" $expectedLength ${#slice_array[@]}
+}
 
 # Load shunit2
 . shunit2
