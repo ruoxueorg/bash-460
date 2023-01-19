@@ -75,12 +75,10 @@ testSet() {
     assertEquals "get" $expected ${array[Grape]}
 }
 
-testSlice () {
+testSlice() {
     expectedLength=2
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
-    echo ${!array[@]}
-    echo ${array[@]}
     slice_array=("${array[@]:1:2}")
     echo ${slice_array[@]}
     assertEquals "length" $expectedLength ${#slice_array[@]}
