@@ -79,9 +79,9 @@ testSlice () {
     local expectedLength=2
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
-    local slice_array=("${array[@]:1:2}")
-    echo ${slice_array[@]}
-    assertEquals "length" $expectedLength ${#slice_array[@]}
+    local sliceArray=("${array[@]:1:2}")
+    echo ${sliceArray[@]}
+    assertEquals "length" $expectedLength ${#sliceArray[@]}
 }
 
 # Load shunit2

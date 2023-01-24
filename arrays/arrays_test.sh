@@ -63,12 +63,12 @@ testSet () {
     assertEquals "get" $expected ${array[0]}
 }
 
-testSlice() {
+testSlice () {
     local expectedLength=2
     local array=("Apple" "Banana" "Cherry")
-    local slice_array=("${array[@]:1:2}")
-    echo ${slice_array[@]}
-    assertEquals "length" $expectedLength ${#slice_array[@]}
+    local sliceArray=("${array[@]:1:2}")
+    echo ${sliceArray[@]}
+    assertEquals "length" $expectedLength ${#sliceArray[@]}
 }
 
 
