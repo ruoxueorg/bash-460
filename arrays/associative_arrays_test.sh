@@ -1,7 +1,7 @@
 #!/bin/bash
 
 testAdd () {
-    expectedLength=3
+    local expectedLength=3
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     echo ${!array[@]}
@@ -10,7 +10,7 @@ testAdd () {
 }
 
 testAddByIndex () {
-    expectedLength=4
+    local expectedLength=4
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     array[Mango]=4
@@ -20,7 +20,7 @@ testAddByIndex () {
 }
 
 testGet () {
-    expected=2
+    local expected=2
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     echo ${array[Kiwifruit]}
@@ -28,7 +28,7 @@ testGet () {
 }
 
 testDelete () {
-    expectedLength=2
+    local expectedLength=2
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     unset array[Grape]
@@ -38,7 +38,7 @@ testDelete () {
 }
 
 testDeleteAll () {
-    expectedLength=0
+    local expectedLength=0
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     unset array
@@ -47,7 +47,7 @@ testDeleteAll () {
 }
 
 testLength () {
-    expectedLength=3
+    local expectedLength=3
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     echo ${#array[@]}
@@ -64,7 +64,7 @@ testLoop () {
 }
 
 testSet () {
-    expected=10
+    local expected=10
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     echo ${!array[@]}
@@ -76,10 +76,10 @@ testSet () {
 }
 
 testSlice () {
-    expectedLength=2
+    local expectedLength=2
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
-    slice_array=("${array[@]:1:2}")
+    local slice_array=("${array[@]:1:2}")
     echo ${slice_array[@]}
     assertEquals "length" $expectedLength ${#slice_array[@]}
 }
