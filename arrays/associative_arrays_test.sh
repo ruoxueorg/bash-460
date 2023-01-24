@@ -1,6 +1,6 @@
 #!/bin/bash
 
-testAdd() {
+testAdd () {
     expectedLength=3
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
@@ -9,7 +9,7 @@ testAdd() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testAddByIndex() {
+testAddByIndex () {
     expectedLength=4
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
@@ -19,7 +19,7 @@ testAddByIndex() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testGet() {
+testGet () {
     expected=2
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
@@ -27,7 +27,7 @@ testGet() {
     assertEquals "get" $expected ${array[Kiwifruit]}
 }
 
-testDelete() {
+testDelete () {
     expectedLength=2
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
@@ -37,7 +37,7 @@ testDelete() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testDeleteAll() {
+testDeleteAll () {
     expectedLength=0
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
@@ -46,7 +46,7 @@ testDeleteAll() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testLength() {
+testLength () {
     expectedLength=3
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
@@ -54,7 +54,7 @@ testLength() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testLoop() {
+testLoop () {
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
     for i in "${!array[@]}"
@@ -63,7 +63,7 @@ testLoop() {
     done
 }
 
-testSet() {
+testSet () {
     expected=10
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)
@@ -75,7 +75,7 @@ testSet() {
     assertEquals "get" $expected ${array[Grape]}
 }
 
-testSlice() {
+testSlice () {
     expectedLength=2
     declare -A array
     array=([Grape]=1 [Kiwifruit]=2 [Lemon]=3)

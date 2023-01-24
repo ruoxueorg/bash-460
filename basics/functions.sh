@@ -4,6 +4,6 @@ helloWorld() {
 	echo "Hello World"
 }
 
-function helloWorld_2 {
+function helloWorld {
 	echo "Hello World"
 }

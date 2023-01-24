@@ -1,10 +1,10 @@
 #!/bin/bash
 
-oneTimeSetUp(){
+oneTimeSetUp () {
     echo "oneTimeSetUp"
 }
 
-oneTimeTearDown(){
+oneTimeTearDown () {
     echo "oneTimeTearDown"
     echo "testsTotal: ${__shunit_testsTotal}"
     echo "testsPassed: ${__shunit_testsPassed}"
@@ -15,19 +15,19 @@ oneTimeTearDown(){
     echo "assertsSkipped: ${__shunit_assertsSkipped}" 
 }
 
-setUp(){
+setUp () {
     echo "setUp"
 }
 
-tearDown(){
+tearDown () {
     echo "tearDown"
 }
 
-helloWorld(){
+helloWorld () {
     echo "Hello World"
 }
 
-testHelloWorld(){
+testHelloWorld () {
     assertEquals "string" "$(helloWorld)"  "Hello World"
 }
 

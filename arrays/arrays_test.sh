@@ -1,13 +1,13 @@
 #!/bin/bash
 
-testAdd() {
+testAdd () {
     expectedLength=3
     array=("Apple" "Banana" "Cherry")
     echo ${array[@]}
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testAddByIndex() {
+testAddByIndex () {
     expectedLength=4
     array=("Apple" "Banana" "Cherry")
     #array+=("Grape")
@@ -16,14 +16,14 @@ testAddByIndex() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testGet() {
+testGet () {
     expected="Banana"
     array=("Apple" "Banana" "Cherry")
     echo ${array[1]}
     assertEquals "get" $expected ${array[1]}
 }
 
-testDelete() {
+testDelete () {
     expectedLength=2
     array=("Apple" "Banana" "Cherry")
     unset array[0]
@@ -31,7 +31,7 @@ testDelete() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testDeleteAll() {
+testDeleteAll () {
     expectedLength=0
     array=("Apple" "Banana" "Cherry")
     unset array
@@ -39,14 +39,14 @@ testDeleteAll() {
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testLength() {
+testLength () {
     expectedLength=3
     array=("Apple" "Banana" "Cherry")
     echo ${#array[@]}
     assertEquals "length" $expectedLength ${#array[@]}
 }
 
-testLoop() {
+testLoop () {
     array=("Apple" "Banana" "Cherry")
     for i in "${array[@]}"
     do
@@ -54,7 +54,7 @@ testLoop() {
     done
 }
 
-testSet() {
+testSet () {
     expected="Grape"
     array=("Apple" "Banana" "Cherry")
     echo ${array[@]}
