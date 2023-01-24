@@ -1,6 +1,6 @@
 #!/bin/bash
 
-testHelloWorld() {
+testHelloWorld () {
     echo "Hello World"
 }
 
