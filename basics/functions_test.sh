@@ -8,20 +8,20 @@ function testBashWorld {
     echo "Bash World"
 }
 
-varA="A"
-varB="B"
+name="Ruoxue"
+amount=10
 localVariables () {
-    local varA="C"
-    varB="D"
-    echo "inside: varA: $varA, varB: $varB"
+    local name="RX"
+    amount=20
+    echo "inside: name: $name, amount: $amount"
 }
 
 testLocalVariables () {
-    echo "before: varA: $varA, varB: $varB"
+    echo "before: name: $name, amount: $amount"
     localVariables
-    echo "after: varA: $varA, varB: $varB"
-    assertEquals "varA" "A" $varA
-    assertEquals "varB" "D" $varB
+    echo "after: name: $name, amount: $amount"
+    assertEquals "name" "Ruoxue" $name
+    assertEquals "name" 20 $amount
 }
 
 
@@ -33,7 +33,7 @@ testReturnValue () {
     local expected=100
     returnValue
     local result=$?
-    echo "result: $result"
+    echo $result
     assertEquals "result" $expected $result
 }
 
@@ -46,7 +46,7 @@ returnValueStdout () {
 testReturnValueStdout () {
     local expected="Bash"
     local result="$(returnValueStdout)"
-    echo "result: $result"
+    echo $result
     assertEquals "result" $expected $result
 }
 
@@ -58,7 +58,7 @@ add () {
 testAdd () {
     local expected=3
     local result="$(add 1 2)"
-    echo "result: $result"
+    echo $result
     assertEquals "result" $expected $result
 }
 
