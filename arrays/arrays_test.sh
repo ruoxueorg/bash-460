@@ -17,7 +17,7 @@ testAddByIndex () {
 }
 
 testGet () {
-    local expected="Pitaya"
+    local expected="Guava"
     local array=("Durian" "Guava" "Pitaya")
     echo ${array[1]}
     assertEquals "get" $expected ${array[1]}
